@@ -41,7 +41,8 @@ class Login extends React.Component {
         this.setState({
           disabledButton: false,
         });
-      } else {
+      }
+      if (loginName.length < minChar) {
         this.setState({
           disabledButton: true,
         });

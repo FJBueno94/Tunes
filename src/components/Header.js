@@ -36,7 +36,6 @@ export default class Header extends Component {
           loading ? (<Carregando />) : (
             <>
               <div>
-                <h4>Seja Bem vindo</h4>
                 <h3 data-testid="header-user-name">
                   {usuario}
                 </h3>
