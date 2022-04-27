@@ -1,11 +1,8 @@
 body {
   background-color: white;
-}
-
-body {
   display: flex;
   justify-content: center;
-  margin: 0;
   height: 100vh;
+  margin: 0;
 }
 
