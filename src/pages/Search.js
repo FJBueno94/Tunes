@@ -16,6 +16,7 @@ class Search extends React.Component {
       loading: false,
       nome: '',
       albuns: [],
+      firstSearch: false,
     };
   }
 
@@ -30,6 +31,7 @@ class Search extends React.Component {
       nome: prevState.artistInput,
       artistInput: '',
       albuns: retornoApi,
+      firstSearch: true,
     }));
   }
 
@@ -61,6 +63,7 @@ class Search extends React.Component {
       loading,
       albuns,
       nome,
+      firstSearch,
     } = this.state;
 
     return (
@@ -100,7 +103,7 @@ class Search extends React.Component {
           <div>
             {
               albuns.length > 0
-                ? (
+                && (
                   albuns.map((e) => (
                     <CardAlbum
                       key={ e.collectionId }
@@ -109,7 +112,10 @@ class Search extends React.Component {
                       albumName={ e.collectionName }
                       artist={ e.artistName }
                     />
-                  ))) : ('Nenhum álbum foi encontrado')
+                  )))
+            }
+            {
+              firstSearch && albuns.length === 0 ? ('Nenhum álbum foi encontrado') : ('')
             }
           </div>
         </main>

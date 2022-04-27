@@ -21,7 +21,6 @@ export default class Header extends Component {
       loading: false,
       usuario: user.name,
     });
-    console.log(user.name);
   }
 
   render() {

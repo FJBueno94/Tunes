@@ -22,10 +22,9 @@ class Album extends React.Component {
     const { match: { params: { id } } } = this.props;
     const retornoApi = await getMusics(id);
     this.setState({
-      // ajuda do Jhonatan comn o segundo parametro de filter para "excluir" o indice 0
+      // ajuda do Jhonatan com o segundo parametro de filter para "excluir" o indice 0
       musicas: retornoApi.filter((e, i) => i !== 0),
       album: retornoApi[0],
-
     });
   }
 
@@ -34,7 +33,6 @@ class Album extends React.Component {
       musicas,
       album,
     } = this.state;
-    console.log(musicas);
     return (
       <div data-testid="page-album">
         <Header />
@@ -51,6 +49,7 @@ class Album extends React.Component {
               key={ e.trackId }
               musicName={ e.trackName }
               previewUrl={ e.previewUrl }
+              trackId={ e.trackId }
             />
           ))
         }
